@@ -1,0 +1,2 @@
+class AmbisController < ApplicationController
+end
