@@ -1,0 +1,138 @@
+// SCSS制作ポリシー
+// 優先順位
+// ブロック要素の位置に関すること
+// ブロック要素の大きさに関すること
+// ブロック要素の余白に関すること
+// ブロック要素のその他の事項（色など）に関すること
+// フォントの大きさに関すること
+
+// headerの変数
+$header-line-height: 50px;
+$header-right-margin: 0 10px;
+$header-color: #FFFFFF;
+
+.header{
+  height: 50px;
+  padding: 0 10%;
+  background-color: #deb887;
+  color: $header-color;
+
+  .left-header{
+    float:left;
+    display: flex;
+    line-height: $header-line-height;
+
+    .logo{
+      margin-right: 30px; 
+      font-size: 150%;
+      font-weight: bold;
+    }
+    .search-field{
+      font-size: 75%;
+      margin: 0 30px;
+
+      .search-box{
+        height: 50%;
+        width: 190px;
+        margin-right: 15px;
+        outline: none;
+        border:solid 1px gray;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .right-header{
+    float: right;
+    display: flex;
+    font-size: 90%;
+    line-height: $header-line-height;
+    
+
+    .like-list{
+
+      margin: $header-right-margin;
+    }
+    .login{
+      margin: $header-right-margin;
+    }
+    .new-account{
+      margin: $header-right-margin;
+    }
+    .new-project{
+      margin: $header-right-margin;
+    }
+  }
+}
+
+.main-contents{
+  height: 100%;
+  margin: 1% 8%;
+
+  .top-image{
+    position: relative;
+    height: 500px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.29);
+    border-bottom: solid 0.5px gray;
+
+    .img{
+      position: absolute;
+      height: 100%;
+      width: 68%;
+      padding: 1%;
+      object-fit: cover;
+
+    }
+    .top-text{
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform : translateY(-50%);
+      content: "";
+      padding: 1% 0 1% 8%;
+      width: 41%;
+      color: #FFFFFF;
+      font-size: 125%;
+      // font-weight: bold;
+      line-height: 38px;
+      background: -webkit-linear-gradient(left, rgba(1, 1, 1, 0) 2%, black 15%);
+    }
+  }
+
+  .projects{
+    height: 100%;
+    margin: 1% 0;
+
+    .new-projects{
+      height: 100%;
+
+      .project{
+        display: flex;
+        flex-wrap:wrap;
+
+        .sample{
+          height: 48%;
+          width: 23%;
+          margin: 1% 1%;
+
+        }
+      }
+    }
+  }
+}
+
+.footer{
+  height: 30px;
+  background-color: lightgray;
+
+  .right-footer{
+    float: right;
+
+    .footer-contents{
+      color: black;
+      font-size: 60%;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+  }
+}

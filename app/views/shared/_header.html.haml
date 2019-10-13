@@ -1,0 +1,36 @@
+.header
+  .left-header
+    .logo
+      = link_to root_path, class: "top-page" do
+        ambi
+    .search-field
+      %input.search-box
+        search
+        -# = form_tag("",method: :get) do
+        -#   = text_field
+        -#     検索する
+  .right-header
+    .like-list
+      = fa_icon 'heart-o', class: 'icon'
+    - if user_signed_in?
+      -# .login
+      -#   = link_to new_user_session_path, class: "login-page" do
+      -#     ログイン
+      .new-account
+        = link_to destroy_user_session_path, class: "new-accout-page" do
+          ログアウト
+      .new-project
+        =link_to new_ambi_path, class: "new-project" do
+          新規投稿
+    
+    - else
+      .login
+        = link_to new_user_session_path, class: "login-page" do
+          ログイン
+      .new-account
+        = link_to new_user_registration_path, class: "new-accout-page" do
+          新規登録
+      .new-project
+        =link_to new_ambi_path, class: "new-project" do
+          新規投稿
+      

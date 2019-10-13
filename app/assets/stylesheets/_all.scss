@@ -1,0 +1,15 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+// レスポンシブデザインのウェブサイトを作るのであれば、全ての要素をあらかじめbox-sizing: border-boxにしておくと楽でしょう。その方が作業中に混乱しづらくなります。
+// 具体的にはCSSに以下のように書いておきます。セレクタに*（アスタリスク）を使うと「全ての要素に対して適用させる」という意味になります。
+// 合わせて疑似要素に対しても合わせて指定しておくのが良いでしょう。
+// https://saruwakakun.com/html-css/reference/box-sizing#ni3
+
+html, body {
+  // height: 100%;
+  margin: 0;
+  padding: 0;
+}

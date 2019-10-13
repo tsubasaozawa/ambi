@@ -1,1 +1,19 @@
-Hello World
+= render partial: 'shared/header'
+
+.main-contents
+  .top-image
+    = image_tag "https://assets.media-platform.com/roomie/dist/images/2017/08/170821ECmaruwan.jpg", class: "img"
+    .top-text
+      伝統工芸品を日常で使う。
+      %br
+      四季を味わう漆のうつわ「MARUWAN」
+  .projects
+    .new-projects
+      .project
+        = image_tag "https://demo.a-blogcms.jp/media/001/201902/1c35033abff55e4664a216314d599201.png", class: "sample"
+      .project
+        = image_tag "https://demo.a-blogcms.jp/media/001/201902/1c35033abff55e4664a216314d599201.png", class: "sample"
+      .project
+        = image_tag "https://demo.a-blogcms.jp/media/001/201902/1c35033abff55e4664a216314d599201.png", class: "sample"
+
+= render partial: 'shared/footer'
