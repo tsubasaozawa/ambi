@@ -1,0 +1,37 @@
+.show-contents{
+  height: 100%;
+  width: 1000px;
+  padding: 25px;
+  margin: 0 auto;
+
+  .show-top{
+    display: flex;
+    height: 400px;
+    width: 100%;
+
+    .show-top-image{
+      height: 100%;
+      width: 650px;
+
+      .show-img{
+        height: 100%;
+        width: 100%;
+        border-radius: 10px 0 0 0;
+      }
+    }
+    .show-top-text{
+      height: 100%;
+      width: 350px;
+      background-color: black;
+      border-radius: 0 10px 0 0;
+    }
+  }
+  .show-detail{
+    height: 900px;
+    width: 100%;
+    margin-top: 20px;
+    background-color: burlywood;
+    border-radius: 0 0 10px 10px;
+
+  }
+}

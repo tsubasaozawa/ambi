@@ -1,0 +1,81 @@
+= render partial: 'shared/header'
+
+.contents
+  .top-image
+    = image_tag "http://oneterrace.vn/wp-content/uploads/2018/02/start-up-04.jpg", class: "img"
+
+  .main-contents
+    .hot-messages
+      .title
+        Hot Messages
+        = link_to messages_path ,class: "index2index" do
+          すべてを見る >
+      .hot-message
+        %table.hot-message-table
+          %thead
+            %tr
+              %th.top-message グループタイトル
+              %th.top-like-count いいね数
+              %th.top-comment-count コメント数
+              %th{:colspan => "3"}
+          %tbody
+            -# - @todos.each do |todo|
+            %tr
+              %td.top-message-title
+                =link_to "" ,class: "hot-message-show" do
+                  農業のIT化による利益構造改革
+              %td 15
+              %td 5
+            %tr
+              %td.top-message-title
+                =link_to "" ,class: "hot-message-show" do
+                  家具のサブスクリプションサービスの実現
+              %td 15
+              %td 5
+            %tr
+              %td.top-message-title
+                =link_to "" ,class: "hot-message-show" do
+                  無料の子ども向けプログラミング学習サービスの実現
+              %td 15
+              %td 5
+            %tr
+              %td.top-message-title
+                =link_to "" ,class: "hot-message-show" do
+                  ドローンによる宅配サービスの実現
+              %td 15
+              %td 5
+
+    .hot-projects
+      .title
+        Hot Projects
+        = link_to ambis_path ,class: "index2index" do
+          すべてを見る >
+      .hot-project
+        %ul.hot-project-list
+          %li
+            .article
+              = link_to ambi_path(current_user) ,class: "article-link" do
+                =image_tag "https://demo.a-blogcms.jp/media/001/201902/1c35033abff55e4664a216314d599201.png", class: "sample"
+                SampleMessage
+          %li
+            .article
+              = link_to ambi_path(current_user) ,class: "article-link" do
+                =image_tag "https://demo.a-blogcms.jp/media/001/201902/1c35033abff55e4664a216314d599201.png", class: "sample"
+                SampleMessage
+          %li
+            .article
+              = link_to ambi_path(current_user) ,class: "article-link" do
+                =image_tag "https://demo.a-blogcms.jp/media/001/201902/1c35033abff55e4664a216314d599201.png", class: "sample"
+                SampleMessage
+          %li
+            .article
+              = link_to ambi_path(current_user) ,class: "article-link" do
+                =image_tag "https://demo.a-blogcms.jp/media/001/201902/1c35033abff55e4664a216314d599201.png", class: "sample"
+                SampleMessage
+          %li
+            .article
+              = link_to ambi_path(current_user) ,class: "article-link" do
+                =image_tag "https://demo.a-blogcms.jp/media/001/201902/1c35033abff55e4664a216314d599201.png", class: "sample"
+                SampleMessage
+
+= render partial: 'shared/footer'

@@ -5,72 +5,15 @@
     %section
       .titleApply
         %h3 新たなambiを投稿する
-      %p.caption
-        プロジェクト掲載に関する相談、質問などを以下相談内容の例文を元にご相談ください。
-        %br/
-        （返信は3営業日程度を目安としております）
+      -# %p.caption
+      -#   プロジェクト掲載に関する相談、質問などを以下相談内容の例文を元にご相談ください。
+      -#   %br/
+      -#   （返信は3営業日程度を目安としております）
       #linkForm.form
         %form#applyForm{:action => "", :method => "POST", :name => "applyForm"}
           .formIn
             %input.errPosRight{:name => "mode", :type => "hidden", :value => "inquiry"}/
             .formInMargin
-              .kakushi
-                %p.inputTile
-                  氏名
-                  %span.requiredTxt 必須
-                %input#name.textInput.chkrequired.errPosRight.after{:name => "name", :placeholder => "例）幕開太郎", :type => "text", :value => ""}/
-                #err_name.formError.userformError.form_applyForm.fixed{:style => "display: none;"}
-                  .formErrorMsg.formErrorContent
-                  .formErrorArrow
-                    .line10
-                    .line9
-                    .line8
-                    .line7
-                    .line6
-                    .line5
-                    .line4
-                    .line3
-                    .line2
-                    .line1
-                  %span.formErrorClose ×
-              .kakushi
-                %p.inputTile
-                  メールアドレス
-                  %span.requiredTxt 必須
-                %input#email.textInput.chkrequired.chkemail.chkhankaku.errPosRight.after{:name => "email", :placeholder => "例）makuake@gmail.com", :type => "text", :value => ""}/
-                #err_email.formError.userformError.form_applyForm.fixed{:style => "display: none;"}
-                  .formErrorMsg.formErrorContent
-                  .formErrorArrow
-                    .line10
-                    .line9
-                    .line8
-                    .line7
-                    .line6
-                    .line5
-                    .line4
-                    .line3
-                    .line2
-                    .line1
-                  %span.formErrorClose ×
-              .kakushi
-                %p.inputTile
-                  電話番号
-                  %span.requiredTxt 必須
-                %input#phone.textInput.chkrequired.chkmin10.chkmax11.errPosRight.after{:maxlength => "11", :name => "phone", :onkeyup => "this.value=this.value.match(/\\d+/)", :placeholder => "例）08012345678", :type => "text", :value => ""}/
-                #err_phone.formError.userformError.form_applyForm.fixed{:style => "display: none;"}
-                  .formErrorMsg.formErrorContent
-                  .formErrorArrow
-                    .line10
-                    .line9
-                    .line8
-                    .line7
-                    .line6
-                    .line5
-                    .line4
-                    .line3
-                    .line2
-                    .line1
-                  %span.formErrorClose ×
               .kakushi
                 %p.inputTile
                   実施したいプロジェクトのカテゴリを選択してください。
@@ -114,199 +57,171 @@
                     %span.formErrorClose ×
                   %i.arrow
               .kakushi
-                %p.inputTile SNSアカウント
                 %p.inputTile
-                  https://www.facebook.com/
-                  %input#sns_facebook.errPosRight{:name => "sns_facebook", :type => "text", :value => ""}/
-                %p.inputTile
-                  https://www.twitter.com/
-                  %input#sns_twitter.errPosRight{:name => "sns_twitter", :type => "text", :value => ""}/
-              .kakushi
-                %p.inputTile あなたを表すWebページがございましたらURLを入力してください。
-                %input#url1.textInput.chkurl.errPosRight.after{:name => "url1", :placeholder => "例）https://www.makuake.com/", :type => "text", :value => ""}/
-                #err_url1.formError.userformError.form_applyForm.fixed{:style => "display: none;"}
-                  .formErrorMsg.formErrorContent
-                  .formErrorArrow
-                    .line10
-                    .line9
-                    .line8
-                    .line7
-                    .line6
-                    .line5
-                    .line4
-                    .line3
-                    .line2
-                    .line1
-                  %span.formErrorClose ×
-                %input#url2.textInput.chkurl.errPosRight.after{:name => "url2", :placeholder => "例）https://www.makuake.com/", :type => "text", :value => ""}/
-                #err_url2.formError.userformError.form_applyForm.fixed{:style => "display: none;"}
-                  .formErrorMsg.formErrorContent
-                  .formErrorArrow
-                    .line10
-                    .line9
-                    .line8
-                    .line7
-                    .line6
-                    .line5
-                    .line4
-                    .line3
-                    .line2
-                    .line1
-                  %span.formErrorClose ×
-              .kakushi
-                %p.inputTile
-                  Makuake or クラウドファンディングを知った、きっかけを教えてください。
+                  プロジェクトタイトル
                   %span.requiredTxt 必須
-                #media.checkLabelInner.chkradio.errPosRight.after
-                  %label.checkLabel
-                    %input{:name => "media", :type => "radio", :value => "13"}>/
-                    Facebook広告/Twitter広告
-                  %label.checkLabel
-                    %input{:name => "media", :type => "radio", :value => "14"}>/
-                    SNSでの友人のシェア/リツイート
-                  %label.checkLabel
-                    %input{:name => "media", :type => "radio", :value => "4"}>/
-                    Webメディアの記事(ギズモード、週刊アスキー、ITmediaなど)
-                  %label.checkLabel
-                    %input{:name => "media", :type => "radio", :value => "15"}>/
-                    テレビ・ラジオ
-                  %label.checkLabel
-                    %input{:name => "media", :type => "radio", :value => "16"}>/
-                    書籍
-                  %label.checkLabel
-                    %input{:name => "media", :type => "radio", :value => "17"}>/
-                    雑誌
-                  %label.checkLabel
-                    %input{:name => "media", :type => "radio", :value => "10"}>/
-                    新聞
-                  %label.checkLabel
-                    %input{:name => "media", :type => "radio", :value => "7"}>/
-                    友達・知人
-                  %label.checkLabel
-                    %input{:name => "media", :type => "radio", :value => "11"}>/
-                    その他
-                  %input#media_other.textInput02.errPosRight{:name => "media_other", :type => "text", :value => ""}/
-                #err_media.formError.userformError.form_applyForm.fixed{:style => "display: none;"}
-                  .formErrorMsg.formErrorContent
-                  .formErrorArrow
-                    .line10
-                    .line9
-                    .line8
-                    .line7
-                    .line6
-                    .line5
-                    .line4
-                    .line3
-                    .line2
-                    .line1
-                  %span.formErrorClose ×
+                %input#title.textInput.chkrequired.errPosRight.after{:title => "title", :placeholder => "例）農業のIT化による利益構造改革", :type => "text", :value => ""}/
               .kakushi
                 %p.inputTile
-                  現在の、プロジェクト状況を教えてください。
+                  What?（何をやるのか）
                   %span.requiredTxt 必須
-                #state.checkLabelInner.chkradio.errPosRight.after
-                  %label.checkLabel
-                    %input{:name => "state", :type => "radio", :value => "1"}/
-                    %span.project_status プロジェクト内容・リターンもイメージできていて、すぐにでもページ制作に取り掛かれる
-                  %label.checkLabel
-                    %input{:name => "state", :type => "radio", :value => "2"}/
-                    %span.project_status 詳細は決まっていないので、相談して決めたい
-                  %label.checkLabel
-                    %input{:name => "state", :type => "radio", :value => "3"}/
-                    %span.project_status 何から取り掛かっていいか、わからない
-                #err_state.formError.userformError.form_applyForm.fixed{:style => "display: none;"}
-                  .formErrorMsg.formErrorContent
-                  .formErrorArrow
-                    .line10
-                    .line9
-                    .line8
-                    .line7
-                    .line6
-                    .line5
-                    .line4
-                    .line3
-                    .line2
-                    .line1
-                  %span.formErrorClose ×
-              .kakushi
-                %p.inputTile.consultation
-                  相談内容
-                  %span.requiredTxt> 必須
-                  （最大1000文字）
-                %textarea#content.textArea.maxlength_counter.chkrequired.errPosRight.after{:cols => "", "data-show_length_element" => "#count", :maxlength => "1000", :name => "content", :rows => ""}
+                %textarea#what.textArea.maxlength_counter.chkrequired.errPosRight.after{:cols => "", "data-show_length_element" => "#count", :maxlength => "1000", :name => "content", :rows => ""}
                   :preserve
-                    ▼相談内容
-                    以下の例文を編集して、送信してください。
-                    
-                    
-                    ◆プロジェクト対象商品【必須】
-                    　商品名や施設名などを具体的に記載してください。
-                    　名称：
-                    　URL：
-                    
-                    
-                    ◆プロジェクトの目的【必須】
-                    　例）この度、新商品を作ろうと思っており、販売するにあたり、資金調達を希望しています。
-                    
-                    
-                    ◆ご希望目標金額
-                    　例）150万円
-                    
-                    
-                    ◆リターン
-                    　リターンとは、支援者の方々にお礼としてお送りする商品になります。
-                    　例）15,000円：完成した時計1個。
-                    　　　27,000円：完成した時計2個。
-                    　　　製品が15000円なので、100個ご支援頂けると生産することができます。
-                    
-                    
-                    ◆スケジュール【必須】
-                    　プロジェクト開始ご希望日：
-                    　例）なるべく早めに
-                    
-                    　リターン発送ご予定日：
-                    　例）6ヶ月後
-                #err_content.formError.userformError.form_applyForm.fixed{:style => "display: none;"}
-                  .formErrorMsg.formErrorContent
-                  .formErrorArrow
-                    .line10
-                    .line9
-                    .line8
-                    .line7
-                    .line6
-                    .line5
-                    .line4
-                    .line3
-                    .line2
-                    .line1
-                  %span.formErrorClose ×
-                = succeed "/1000" do
-                  %span#count 348
-            #is_not_antisocialist.antisocialist-box.chkcheckbox.errPosRight.after
-              %label.antisocialist-box-label
-                .antisocialist-box-left
-                  %input{:name => "is_not_antisocialist", :type => "checkbox", :value => "1"}/
-                .antisocialist-box-right
-                  %span
-                    %a{:href => "/pages/term/", :target => "_blank"}> 利用規約
-                    、及び
-                    %a{:href => "/pages/guideline/", :target => "_blank"}> ガイドライン
-                    を確認し、自己または自己の役員および従業員が利用規約で規定する暴力団等並びに反社会的勢力等に該当しないことを表明し、保証します。
-            #err_is_not_antisocialist.formError.userformError.form_applyForm.fixed{:style => "display: none;"}
-              .formErrorMsg.formErrorContent
-              .formErrorArrow
-                .line10
-                .line9
-                .line8
-                .line7
-                .line6
-                .line5
-                .line4
-                .line3
-                .line2
-                .line1
-              %span.formErrorClose ×
+                    例）ITを活用し、農家の制作物を直接、無駄なく消費者に届ける仕組みをつくる
+              .kakushi
+                %p.inputTile
+                  Why?（なぜやるのか）
+                  %span.requiredTxt 必須
+                %textarea#why.textArea.maxlength_counter.chkrequired.errPosRight.after{:cols => "", "data-show_length_element" => "#count", :maxlength => "500", :name => "content", :rows => ""}
+                  :preserve
+                    例）これまで「農業なんてダサい」と嫌煙していたが、実家の農地が荒廃していく様を目の当たりにしてなんとかしたいと強く思ったため。
+              .kakushi
+                %p.inputTile
+                  How?（どのようにやるのか）
+                  %span.requiredTxt 必須
+                %textarea#how.textArea.maxlength_counter.chkrequired.errPosRight.after{:cols => "", "data-show_length_element" => "#count", :maxlength => "1000", :name => "content", :rows => ""}
+                  :preserve
+                    例）
+              .kakushi
+                %p.inputTile
+                  When? & How much?（いつまでに、いくら必要なのか）
+                  %span.requiredTxt 必須
+                .inputBox
+                  %p.miniTile
+                    ＜達成リミット＞
+                    %input#limit.textInput.chkrequired.errPosRight.after{:title => "title", :placeholder => "例）1,000,000円", :type => "text", :value => ""}/
+                  %p.miniTile
+                    ＜目標金額＞
+                    %input#targetAmount.textInput.chkrequired.errPosRight.after{:title => "title", :placeholder => "例）2019/12/31", :type => "text", :value => ""}/
+              .kakushi
+                %p.inputTile
+                  リターンは何があるのか？
+                  %span.requiredTxt 必須
+                %textarea#return.textArea.maxlength_counter.chkrequired.errPosRight.after{:cols => "", "data-show_length_element" => "#count", :maxlength => "1000", :name => "content", :rows => ""}
+                  :preserve
+                    例）
+              .kakushi
+                %p.inputTile
+                  トップ画像選択
+                  %span.requiredTxt 必須
+                #image.imageSelect.chkrequired.errPosRight.after{:cols => "", "data-show_length_element" => "#count", :maxlength => "1000", :name => "content", :rows => ""}
+                  = form_for [@ambi] do |f|
+                    .input-box
+                      = f.label :image, class: 'input-box__image' do
+                        = fa_icon 'picture-o', class: 'icon'
+                        = f.file_field :image, class: 'input-box__image__file'
+
+
+              -# .kakushi
+              -#   %p.inputTile
+              -#     現在のプロジェクト状況を教えてください。
+              -#     %span.requiredTxt 必須
+              -#   #state.checkLabelInner.chkradio.errPosRight.after
+              -#     %label.checkLabel
+              -#       %input{:name => "state", :type => "radio", :value => "1"}/
+              -#       %span.project_status まだ構想段階で、具体的な動きは取れていない
+              -#     %label.checkLabel
+              -#       %input{:name => "state", :type => "radio", :value => "2"}/
+              -#       %span.project_status すでに走り始めているが、資金調達が間に合っていない
+              -#     %label.checkLabel
+              -#       %input{:name => "state", :type => "radio", :value => "3"}/
+              -#       %span.project_status すでにプロジェクト自体は、かなり進行しているが、新たな取り組みを急ぎ実施したい
+              -#   #err_state.formError.userformError.form_applyForm.fixed{:style => "display: none;"}
+              -#     .formErrorMsg.formErrorContent
+              -#     .formErrorArrow
+              -#       .line10
+              -#       .line9
+              -#       .line8
+              -#       .line7
+              -#       .line6
+              -#       .line5
+              -#       .line4
+              -#       .line3
+              -#       .line2
+              -#       .line1
+              -#     %span.formErrorClose ×
+
           %input.errPosRight{:name => "fuel_csrf_token", :type => "hidden", :value => "f6e111703b43851d872edf426af8a13abfd49bfd516bcd9c73a10b85f61c657f0d7df4188be6c3b791ded40577ce25810cff31f77d8ba8249d4e1c32237d21f7"}/
           %input.subMit{:type => "submit", :value => "確認して送信"}/
 
 = render partial: 'shared/footer'
+
+
+-#   .kakushi
+-#     %p.inputTile.consultation
+-#       相談内容
+-#       %span.requiredTxt> 必須
+-#       （最大1000文字）
+-#     %textarea#content.textArea.maxlength_counter.chkrequired.errPosRight.after{:cols => "", "data-show_length_element" => "#count", :maxlength => "1000", :name => "content", :rows => ""}
+-#       :preserve
+-#         ▼相談内容
+-#         以下の例文を編集して、送信してください。
+        
+        
+-#         ◆プロジェクト対象商品【必須】
+-#         　商品名や施設名などを具体的に記載してください。
+-#         　名称：
+-#         　URL：
+        
+        
+-#         ◆プロジェクトの目的【必須】
+-#         　例）この度、新商品を作ろうと思っており、販売するにあたり、資金調達を希望しています。
+        
+        
+-#         ◆ご希望目標金額
+-#         　例）150万円
+        
+        
+-#         ◆リターン
+-#         　リターンとは、支援者の方々にお礼としてお送りする商品になります。
+-#         　例）15,000円：完成した時計1個。
+-#         　　　27,000円：完成した時計2個。
+-#         　　　製品が15000円なので、100個ご支援頂けると生産することができます。
+        
+        
+-#         ◆スケジュール【必須】
+-#         　プロジェクト開始ご希望日：
+-#         　例）なるべく早めに
+        
+-#         　リターン発送ご予定日：
+-#         　例）6ヶ月後
+-#     #err_content.formError.userformError.form_applyForm.fixed{:style => "display: none;"}
+-#       .formErrorMsg.formErrorContent
+-#       .formErrorArrow
+-#         .line10
+-#         .line9
+-#         .line8
+-#         .line7
+-#         .line6
+-#         .line5
+-#         .line4
+-#         .line3
+-#         .line2
+-#         .line1
+-#       %span.formErrorClose ×
+-#     = succeed "/1000" do
+-#       %span#count 348
+-# -# #is_not_antisocialist.antisocialist-box.chkcheckbox.errPosRight.after
+-# -#   %label.antisocialist-box-label
+-# -#     .antisocialist-box-left
+-# -#       %input{:name => "is_not_antisocialist", :type => "checkbox", :value => "1"}/
+-# -#     .antisocialist-box-right
+-# -#       %span
+-# -#         %a{:href => "/pages/term/", :target => "_blank"}> 利用規約
+-# -#         、及び
+-# -#         %a{:href => "/pages/guideline/", :target => "_blank"}> ガイドライン
+-# -#         を確認し、自己または自己の役員および従業員が利用規約で規定する暴力団等並びに反社会的勢力等に該当しないことを表明し、保証します。
+-# -# #err_is_not_antisocialist.formError.userformError.form_applyForm.fixed{:style => "display: none;"}
+-# -#   .formErrorMsg.formErrorContent
+-# -#   .formErrorArrow
+-# -#     .line10
+-# -#     .line9
+-# -#     .line8
+-# -#     .line7
+-# -#     .line6
+-# -#     .line5
+-# -#     .line4
+-# -#     .line3
+-# -#     .line2
+-# -#     .line1
+-# -#   %span.formErrorClose ×

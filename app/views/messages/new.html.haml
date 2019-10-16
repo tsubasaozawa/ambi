@@ -1,0 +1,99 @@
+= render partial: 'shared/header'
+
+.main
+  #linkTop.boxApply
+    %section
+      .titleApply
+        %h3 簡易プロジェクトを投稿する
+      -# %p.caption
+      -#   プロジェクト掲載に関する相談、質問などを以下相談内容の例文を元にご相談ください。
+      -#   %br/
+      -#   （返信は3営業日程度を目安としております）
+      #linkForm.form
+        %form#applyForm{:action => "", :method => "POST", :name => "applyForm"}
+          .formIn
+            %input.errPosRight{:name => "mode", :type => "hidden", :value => "inquiry"}/
+            .formInMargin
+              .kakushi
+                %p.inputTile
+                  実施したいプロジェクトのカテゴリを選択してください。
+                  %span.requiredTxt 必須
+                .select
+                  %select#category.chkselect.errPosRight.after{:name => "category"}
+                    %option{:value => ""} 選択してください
+                    %option{:value => "2"} プロダクト
+                    %option{:value => "6"} ファッション
+                    %option{:value => "10"} フード
+                    %option{:value => "20"} レストラン・バー
+                    %option{:value => "5"} テクノロジー
+                    %option{:value => "19"} コスメ・ビューティー
+                    %option{:value => "1"} アート・写真
+                    %option{:value => "11"} 映画・映像
+                    %option{:value => "7"} アニメ・マンガ
+                    %option{:value => "4"} 音楽
+                    %option{:value => "9"} ゲーム
+                    %option{:value => "12"} 演劇・パフォーマンス
+                    %option{:value => "13"} お笑い・エンタメ
+                    %option{:value => "18"} 出版・ジャーナリズム
+                    %option{:value => "14"} 教育
+                    %option{:value => "3"} スポーツ
+                    %option{:value => "8"} スタートアップ
+                    %option{:value => "16"} 地域活性化
+                    %option{:value => "15"} 社会貢献
+                    %option{:value => "17"} 世界一周
+                  #err_category.formError.userformError.form_applyForm.fixed{:style => "display: none;"}
+                    .formErrorMsg.formErrorContent
+                    .formErrorArrow
+                      .line10
+                      .line9
+                      .line8
+                      .line7
+                      .line6
+                      .line5
+                      .line4
+                      .line3
+                      .line2
+                      .line1
+                    %span.formErrorClose ×
+                  %i.arrow
+              .kakushi
+                %p.inputTile
+                  タイトル
+                  %span.requiredTxt 必須
+                %input#name.textInput.chkrequired.errPosRight.after{:title => "title", :placeholder => "例）ケーキのお店を出したい", :type => "text", :value => ""}/
+              .kakushi
+                %p.inputTile.consultation
+                  投稿内容
+                  %span.requiredTxt> 必須
+                  （最大100文字）
+                %textarea#content.textArea.maxlength_counter.chkrequired.errPosRight.after{:cols => "", "data-show_length_element" => "#count", :maxlength => "1000", :name => "content", :rows => ""}
+                  :preserve
+                    ◆これからやりたい内容【必須】
+                    
+                    
+                    ◆それをやる目的【必須】
+                    　例）この度、新商品を作ろうと思っており、販売するにあたり、資金調達を希望しています。
+                    
+                    
+                    ◆その他
+
+                #err_content.formError.userformError.form_applyForm.fixed{:style => "display: none;"}
+                  .formErrorMsg.formErrorContent
+                  .formErrorArrow
+                    .line10
+                    .line9
+                    .line8
+                    .line7
+                    .line6
+                    .line5
+                    .line4
+                    .line3
+                    .line2
+                    .line1
+                  %span.formErrorClose ×
+                = succeed "/1000" do
+                  %span#count 348
+          %input.subMit{:type => "submit", :value => "確認して送信"}/
+
+
+= render partial: 'shared/footer'

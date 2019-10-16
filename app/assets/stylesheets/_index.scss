@@ -7,14 +7,13 @@
 // フォントの大きさに関すること
 
 // headerの変数
-$header-line-height: 50px;
+$header-line-height: 60px;
 $header-right-margin: 0 10px;
-$header-color: #FFFFFF;
+$header-color: black;
 
 .header{
-  height: 50px;
-  padding: 0 10%;
-  background-color: #deb887;
+  height: 60px;
+  padding: 0 15%;
   color: $header-color;
 
   .left-header{
@@ -26,6 +25,11 @@ $header-color: #FFFFFF;
       margin-right: 30px; 
       font-size: 150%;
       font-weight: bold;
+
+      .top-page{
+        color: $header-color;
+        text-decoration: none;
+      }
     }
     .search-field{
       font-size: 75%;
@@ -50,7 +54,6 @@ $header-color: #FFFFFF;
     
 
     .like-list{
-
       margin: $header-right-margin;
     }
     .login{
@@ -60,26 +63,82 @@ $header-color: #FFFFFF;
       margin: $header-right-margin;
     }
     .new-project{
+      position: relative;
       margin: $header-right-margin;
+      cursor: pointer;
+      
+      .new-select-list{
+        position: absolute;
+        bottom: -55px;
+        display: none;
+        width: 210px;
+        z-index: 3;
+
+        ul{
+          li{
+            line-height: 30px;
+            background: rgba(1,1,1,0.8);
+            margin-bottom: 3px;
+            padding-left: 10px;
+
+            .select-btn{
+              font-size: 12px;
+              color: #FFFFFF;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      
+      .new-btn{
+        color: $header-color;
+        text-decoration: none;       
+      }
+    }
+    .logout{
+      margin: $header-right-margin;
+
+      .signout{
+        color: $header-color;
+        text-decoration: none;
+      }
+    }
+    .login-user{
+      margin: $header-right-margin;
+
+      .edit-btn{
+        position: relative;
+        display: block;
+        height: 100%;
+
+        .user-img{
+          position: absolute;
+          top: 50%;
+          -webkit-transform : translateY(-50%);
+          transform : translateY(-50%);
+          height: 33px;
+          width: 33px;
+          text-decoration: none;
+        }
+      }
     }
   }
 }
 
-.main-contents{
+.contents{
   height: 100%;
-  margin: 1% 8%;
 
   .top-image{
     position: relative;
-    height: 500px;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.29);
-    border-bottom: solid 0.5px gray;
+    height: 550px;
+    // box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.29);
+    // border-bottom: solid 0.5px gray;
 
     .img{
       position: absolute;
       height: 100%;
-      width: 68%;
-      padding: 1%;
+      width: 100%;
+      // padding: 1%;
       object-fit: cover;
 
     }
@@ -99,22 +158,126 @@ $header-color: #FFFFFF;
     }
   }
 
-  .projects{
+  .main-contents{
     height: 100%;
-    margin: 1% 0;
+    width: 1000px;
+    margin: 35px auto 0;
 
-    .new-projects{
-      height: 100%;
+    .hot-messages{
+      margin-bottom: 4%;
+      font-weight: bold;
 
-      .project{
+      .title{
+        align-items: center;
         display: flex;
-        flex-wrap:wrap;
+        justify-content: space-between;
+        margin: 0 0 12px;
 
-        .sample{
-          height: 48%;
-          width: 23%;
-          margin: 1% 1%;
+        .index2index{
+          border: 1px solid #989898;
+          border-radius: 4px;
+          color: #4a4a4a;
+          font-size: 12px;
+          padding: 9px 12px 8px 15px;
+          text-decoration: none;
+        }
+      }
 
+      .hot-message{
+        margin: 0 4%;
+        font-weight:normal;
+        
+        .hot-message-table{
+          width: 800px;
+          
+          tr{
+
+            th{
+              padding-bottom: 5px;
+              text-align: center;
+              font-weight: bold;
+            }
+
+            .top-message{
+              width: 70%;
+              text-align: left;
+            }
+
+            .top-like-count{
+              width: 15%;
+            }
+
+            .top-comment-count{
+              width: 15%;
+            }
+
+            td{
+              font-family: verdana, arial, helvetica, sans-serif;
+              // font-size: 13px;
+              line-height: 35px;
+              padding: 0 10px 7px;
+              text-align: center;
+
+              .hot-message-show{
+                color: black;
+                text-decoration: none;
+              }
+            }
+            .top-message-title{
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+
+    .hot-projects{
+      font-weight: bold;
+
+      .title{
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 30px;
+
+        .index2index{
+          border: 1px solid #989898;
+          border-radius: 4px;
+          color: #4a4a4a;
+          font-size: 12px;
+          padding: 9px 12px 8px 15px;
+          text-decoration: none;
+        }
+      }
+
+      .hot-project{
+
+        .hot-project-list{
+          display: flex;
+          flex-wrap:wrap;
+          justify-content: start;
+
+          li{
+            width: 230px;
+            margin: 0 10px 20px; 
+
+            .article{
+              height: 300px;
+              border: solid 1px lightgray;
+              font-size: 13px;
+              font-weight: normal;
+
+              .article-link{
+                color: black;
+                text-decoration: none;
+
+                .sample{
+                  height: 150px;
+                  width: 100%;
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -122,7 +285,7 @@ $header-color: #FFFFFF;
 }
 
 .footer{
-  height: 30px;
+  height: 300px;
   background-color: lightgray;
 
   .right-footer{

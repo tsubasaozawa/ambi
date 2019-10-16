@@ -1,0 +1,23 @@
+= render partial: 'shared/header'
+
+.contents
+  -# .top-image
+  -#   = image_tag "http://oneterrace.vn/wp-content/uploads/2018/02/start-up-04.jpg", class: "img"
+
+  .main-contents
+    .hot-messages
+      .title
+        Hot Messages
+      .hot-message
+        %ul
+          %li
+            =link_to "" ,class: "hot-message-show" do
+              SampleMessage
+          %li
+            =link_to "" ,class: "hot-message-show" do
+              SampleMessage
+          %li
+            =link_to "" ,class: "hot-message-show" do
+              SampleMessage
+
+= render partial: 'shared/footer'
